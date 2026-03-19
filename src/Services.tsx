@@ -192,6 +192,15 @@ function Services() {
                     ))}
                   </ul>
                 </div>
+                <a
+                  href={`mailto:yuto7924@gmail.com?subject=${encodeURIComponent(svc.title + "について相談")}&body=【お名前】%0A%0A【ご相談内容】%0A`}
+                  className="srv-card-cta"
+                >
+                  このサービスについて相談する
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
             </article>
           ))}

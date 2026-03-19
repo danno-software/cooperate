@@ -60,7 +60,7 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
 }
 
 function App() {
-  usePageMeta("", "株式会社団野ソフトウェア - ソフトウェア開発で、ビジネスを前へ。", "/");
+  usePageMeta("", "株式会社団野ソフトウェア - AWS / GCP / Azure のクラウドインフラ設計・構築から運用最適化、アプリケーション開発まで。", "/");
 
   const aboutRef = useReveal<HTMLElement>();
   const servicesRef = useReveal<HTMLElement>();
@@ -72,15 +72,24 @@ function App() {
         <div className="hero-content">
           <p className="hero-label">Danno Software</p>
           <h1>
-            <span className="hero-line">ソフトウェア開発で、</span>
-            <span className="hero-line hero-line--delayed">ビジネスを前へ。</span>
+            <span className="hero-line">クラウドインフラと開発の</span>
+            <span className="hero-line hero-line--delayed">技術パートナー</span>
           </h1>
           <div className="hero-rule" />
           <p className="hero-sub">
-            Webアプリケーション開発・システム設計を通じて
+            AWS / GCP / Azure の設計・構築から運用最適化、
             <br />
-            お客様の課題解決をサポートします。
+            アプリケーション開発まで一貫して支援します。
           </p>
+          <a
+            href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
+            className="hero-cta"
+          >
+            まずは相談する
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </section>
 
