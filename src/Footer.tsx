@@ -25,7 +25,6 @@ function Footer() {
               <a href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A">
                 yuto7924@gmail.com
               </a>
-              <span className="footer-address">大阪市北区梅田1-2-2</span>
             </div>
           </div>
         </div>
