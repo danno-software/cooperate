@@ -190,6 +190,11 @@ function Services() {
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
+        <p className="contact-email">
+          フォームから送信できない場合は{" "}
+          <a href="mailto:yuto7924@gmail.com">yuto7924@gmail.com</a>{" "}
+          までご連絡ください。
+        </p>
       </section>
     </>
   );

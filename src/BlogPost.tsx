@@ -45,6 +45,20 @@ function BlogPost() {
         />
       </article>
 
+      <section className="blog-post-cta">
+        <p className="blog-post-cta-text">
+          お仕事のご依頼・ご相談はお気軽にどうぞ。
+        </p>
+        <a href="/#contact" className="blog-post-cta-button">
+          お問い合わせページへ
+        </a>
+        <p className="blog-post-cta-email">
+          フォームから送信できない場合は{" "}
+          <a href="mailto:yuto7924@gmail.com">yuto7924@gmail.com</a>{" "}
+          までご連絡ください。
+        </p>
+      </section>
+
       <div className="blog-post-back">
         <Link to="/blog" className="blog-back-link">
           <svg
