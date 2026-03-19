@@ -3,7 +3,8 @@ import { usePageMeta } from "./usePageMeta.ts";
 function Services() {
   usePageMeta(
     "事業内容",
-    "クラウドインフラ構築・IaC導入、ネットワーク設計、AIプロトタイプ開発、クラウドコスト最適化。株式会社団野ソフトウェア。"
+    "クラウドインフラ構築・IaC導入、ネットワーク設計、AIプロトタイプ開発、クラウドコスト最適化。株式会社団野ソフトウェア。",
+    "/services"
   );
 
   return (

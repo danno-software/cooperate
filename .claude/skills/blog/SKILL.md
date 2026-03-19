@@ -46,12 +46,21 @@ tags: タグ1, タグ2, タグ3
 
 記事末尾に CTA セクションが **BlogPost.tsx で自動付与** される。Markdown 側で追加する必要はない。
 
+### SEO（自動対応）
+
+記事追加時に手動で SEO 設定する必要はない。以下がすべて自動で適用される。
+
+- **sitemap.xml** — `npm run build` 時に `scripts/generate-sitemap.ts` が個別記事 URL を自動生成
+- **OGP / canonical** — `src/usePageMeta.ts` でページごとに動的更新
+- **Article 構造化データ** — `src/BlogPost.tsx` で JSON-LD を動的埋め込み
+
 ### ファイル構成
 
 - `content/blog/*.md` — 記事のMarkdownファイル
 - `src/blogLoader.ts` — glob importでMDを読み込み、frontmatter解析 + marked変換。`BlogPost` / `TocItem` 型を定義
 - `src/Blog.tsx` — `/blog` 記事一覧ページ
-- `src/BlogPost.tsx` — `/blog/:slug` 記事詳細ページ（CTA 含む）
+- `src/BlogPost.tsx` — `/blog/:slug` 記事詳細ページ（CTA・Article JSON-LD 含む）
+- `scripts/generate-sitemap.ts` — ビルド時に sitemap.xml を自動生成
 
 ### 技術詳細
 

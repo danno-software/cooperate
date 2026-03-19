@@ -3,7 +3,8 @@ import { usePageMeta } from "./usePageMeta.ts";
 function About() {
   usePageMeta(
     "会社概要",
-    "株式会社団野ソフトウェアの会社概要。代表 団野優人。ソフトウェア開発・技術コンサルティング。"
+    "株式会社団野ソフトウェアの会社概要。代表 団野優人。ソフトウェア開発・技術コンサルティング。",
+    "/about"
   );
 
   return (

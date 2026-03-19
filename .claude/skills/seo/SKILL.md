@@ -8,20 +8,29 @@ user-invocable: false
 
 - Google Search Console: 登録済み（2026-03-19）
 - Google Analytics: G-D3YG368KVN（index.htmlに埋め込み）
-- `public/sitemap.xml` — 送信済み
+- `public/sitemap.xml` — ビルド時に自動生成
 - `public/robots.txt` — 全クローラー許可
 
-### sitemap.xml の更新ルール
+### sitemap.xml の自動生成
 
-ページ追加時に `<url>` エントリを追加すること。ブログ記事の個別URLは含めず、`/blog` 一覧ページのみ掲載。
+`scripts/generate-sitemap.ts` がビルド時（`npm run build`）に自動実行され、`public/sitemap.xml` を生成する。
 
-現在のページ: `/`、`/about`、`/services`、`/blog`
+- 静的ページ（`/`, `/about`, `/services`, `/blog`）は固定エントリ
+- ブログ記事の個別 URL は `content/blog/*.md` から自動取得（`lastmod` に frontmatter の `date` を使用）
+- **記事追加時に sitemap を手動編集する必要はない**
+- 静的ページを追加した場合は `scripts/generate-sitemap.ts` の `staticPages` 配列に追加すること
 
 ### 構造化データ（JSON-LD）
 
-`index.html` に `<script type="application/ld+json">` で Organization スキーマを埋め込み済み。
-事業内容の変更時は `description` フィールドも更新すること。
+- `index.html` — Organization スキーマ（事業内容の変更時は `description` も更新すること）
+- `src/BlogPost.tsx` — 各ブログ記事に Article スキーマを動的に埋め込み（headline, description, datePublished, author, publisher, keywords）
 
-### OGP
+### OGP / メタタグ
 
-`index.html` の `<head>` に og:title / og:description / og:image / twitter:card を設定済み。
+`src/usePageMeta.ts` で各ページごとに動的に更新される。
+
+- `<title>`, `meta[name="description"]`
+- `og:title`, `og:description`, `og:url`, `og:type`
+- `<link rel="canonical">`
+
+初期値は `index.html` の `<head>` に設定（og:image, twitter:card 含む）。
