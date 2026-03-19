@@ -12,8 +12,8 @@ const Blog = lazy(() => import('./Blog.tsx'))
 const BlogPost = lazy(() => import('./BlogPost.tsx'))
 const NotFound = lazy(() => import('./NotFound.tsx'))
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+export function RootApp() {
+  return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
@@ -26,5 +26,11 @@ createRoot(document.getElementById('root')!).render(
         </Route>
       </Routes>
     </BrowserRouter>
+  )
+}
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <RootApp />
   </StrictMode>,
 )

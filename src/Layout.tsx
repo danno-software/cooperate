@@ -12,7 +12,7 @@ function Layout() {
 
   return (
     <>
-      <Header />
+      <Header key={pathname} />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
