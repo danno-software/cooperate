@@ -26,18 +26,6 @@ function Header() {
           <Link to="/about">概要</Link>
           <Link to="/services">事業</Link>
           <Link to="/blog">ブログ</Link>
-          {isHome ? (
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
-              お問い合わせ
-            </a>
-          ) : (
-            <a
-              href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
-              onClick={() => setMenuOpen(false)}
-            >
-              お問い合わせ
-            </a>
-          )}
         </nav>
       </div>
     </header>

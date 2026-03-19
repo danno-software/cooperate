@@ -19,6 +19,14 @@ function Footer() {
               <Link to="/blog">ブログ</Link>
             </nav>
           </div>
+          <div className="footer-col">
+            <p className="footer-col-title">お問い合わせ</p>
+            <div className="footer-nav">
+              <a href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A">
+                yuto7924@gmail.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div className="footer-bottom">
