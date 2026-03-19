@@ -6,12 +6,12 @@ function useRevealAll() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const targets = el.querySelectorAll(".srv-reveal");
+    const targets = el.querySelectorAll(".page-reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            (entry.target as HTMLElement).classList.add("srv-visible");
+            (entry.target as HTMLElement).classList.add("page-visible");
             observer.unobserve(entry.target);
           }
         });
@@ -49,7 +49,7 @@ function Services() {
 
       <section className="srv-target">
         <div className="srv-target-inner">
-          <h2 className="srv-reveal">こんな課題はありませんか？</h2>
+          <h2 className="page-reveal">こんな課題はありませんか？</h2>
           <div className="srv-target-grid">
             {[
               "クラウド環境を手動で管理していて、属人化やミスが不安",
@@ -59,7 +59,7 @@ function Services() {
               "新しいサービスを素早く形にして検証したい",
               "技術的な判断を相談できる相手がいない",
             ].map((text, i) => (
-              <div className="srv-target-item srv-reveal" key={i} style={{ animationDelay: `${i * 0.08}s` }}>
+              <div className="srv-target-item page-reveal" key={i} style={{ animationDelay: `${i * 0.08}s` }}>
                 <svg className="srv-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
@@ -72,14 +72,14 @@ function Services() {
 
       <section className="srv-strength">
         <div className="srv-strength-inner">
-          <h2 className="srv-reveal">1人法人だからできること</h2>
+          <h2 className="page-reveal">1人法人だからできること</h2>
           <div className="srv-strength-grid">
             {[
               { title: "伝言ゲームなし", desc: "窓口と作業者が同一人物。要件の認識ずれが起きません。" },
               { title: "意思決定が速い", desc: "社内承認不要。相談から見積もり・着手まで最短で対応します。" },
               { title: "柔軟な関わり方", desc: "スポットの技術相談から継続的な開発支援まで、規模を問わず対応できます。" },
             ].map((item, i) => (
-              <div className="srv-strength-item srv-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+              <div className="srv-strength-item page-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
                 <span className="srv-strength-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -91,7 +91,7 @@ function Services() {
 
       <section className="srv-flow">
         <div className="srv-flow-inner">
-          <h2 className="srv-reveal">ご依頼の流れ</h2>
+          <h2 className="page-reveal">ご依頼の流れ</h2>
           <div className="srv-flow-steps">
             {[
               { step: "01", title: "ヒアリング", desc: "現状の課題やご要望をお聞かせください。" },
@@ -99,7 +99,7 @@ function Services() {
               { step: "03", title: "実施", desc: "合意いただいた内容で作業を進めます。" },
               { step: "04", title: "納品・振り返り", desc: "成果物の確認と、今後の改善点を共有します。" },
             ].map((item, i) => (
-              <div className="srv-flow-step srv-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+              <div className="srv-flow-step page-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
                 <span className="srv-flow-num">{item.step}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -169,7 +169,7 @@ function Services() {
               ],
             },
           ].map((svc) => (
-            <article className="srv-card srv-reveal" key={svc.num}>
+            <article className="srv-card page-reveal" key={svc.num}>
               <div className="srv-card-header">
                 <span className="srv-card-num">{svc.num}</span>
                 <h2>{svc.title}</h2>
@@ -198,9 +198,9 @@ function Services() {
         </div>
       </section>
 
-      <section className="srv-cta">
-        <div className="srv-cta-inner srv-reveal">
-          <p className="srv-cta-lead">まずはお気軽にご相談ください。</p>
+      <section className="page-cta">
+        <div className="page-cta-inner page-reveal">
+          <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
           <a
             href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
             className="contact-button"

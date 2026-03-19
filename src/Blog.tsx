@@ -1,7 +1,30 @@
-import { useDeferredValue, useState } from "react";
+import { useEffect, useRef, useDeferredValue, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllPosts } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
+
+function useRevealAll() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const targets = el.querySelectorAll(".page-reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add("page-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
@@ -31,19 +54,24 @@ function Blog() {
     return matchesSearch && matchesTag;
   });
 
+  const wrapperRef = useRevealAll();
+
   return (
-    <>
-      <section className="blog-hero">
-        <p className="hero-label">Blog</p>
-        <h1>ブログ</h1>
-        <p className="blog-hero-sub">
-          技術的な知見やお知らせを発信しています。
-        </p>
+    <div ref={wrapperRef}>
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <span className="page-hero-label">Blog</span>
+          <div className="page-hero-line" />
+          <h1>ブログ</h1>
+          <p className="page-hero-sub">
+            技術的な知見やお知らせを発信しています。
+          </p>
+        </div>
       </section>
 
       <section className="blog-list-section">
         <div className="blog-list-inner">
-          <div className="blog-list-toolbar">
+          <div className="blog-list-toolbar page-reveal">
             <div className="blog-list-summary">
               <p className="blog-list-label">Knowledge Base</p>
               <p className="blog-list-count">
@@ -63,7 +91,7 @@ function Blog() {
           </div>
 
           {allTags.length > 0 && (
-            <div className="blog-tag-filter" aria-label="記事タグ">
+            <div className="blog-tag-filter page-reveal" aria-label="記事タグ">
               <button
                 type="button"
                 className={`blog-tag-chip${activeTag === null ? " is-active" : ""}`}
@@ -86,11 +114,12 @@ function Blog() {
 
           {filteredPosts.length > 0 ? (
             <div className="blog-grid">
-              {filteredPosts.map((post) => (
+              {filteredPosts.map((post, i) => (
                 <Link
                   to={`/blog/${post.slug}`}
                   key={post.slug}
-                  className="blog-card"
+                  className="blog-card page-reveal"
+                  style={{ animationDelay: `${i * 0.06}s` }}
                 >
                   <div className="blog-card-meta">
                     <time className="blog-card-date">{formatDate(post.date)}</time>
@@ -132,7 +161,7 @@ function Blog() {
           )}
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

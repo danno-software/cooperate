@@ -1,6 +1,30 @@
+import { useEffect, useRef } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
+
+function useRevealAll() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const targets = el.querySelectorAll(".page-reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add("page-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
@@ -16,6 +40,8 @@ function BlogPost() {
     post?.description ?? "",
     post ? `/blog/${post.slug}` : undefined
   );
+
+  const wrapperRef = useRevealAll();
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -45,18 +71,18 @@ function BlogPost() {
   };
 
   return (
-    <>
+    <div ref={wrapperRef}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article className="blog-post">
-        <div className="blog-post-header">
+        <div className="blog-post-header blog-post-fadein">
           <time className="blog-post-date">{formatDate(post.date)}</time>
           <h1>{post.title}</h1>
         </div>
         {post.toc.length > 0 && (
-          <nav className="blog-toc">
+          <nav className="blog-toc blog-post-fadein blog-post-fadein--d1">
             <p className="blog-toc-title">目次</p>
             <ul>
               {post.toc.map((item) => (
@@ -68,12 +94,12 @@ function BlogPost() {
           </nav>
         )}
         <div
-          className="blog-post-body"
+          className="blog-post-body blog-post-fadein blog-post-fadein--d2"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
 
-      <section className="blog-post-cta">
+      <section className="blog-post-cta page-reveal">
         <p className="blog-post-cta-text">
           お仕事のご依頼・ご相談はお気軽にどうぞ。
         </p>
@@ -82,7 +108,7 @@ function BlogPost() {
         </a>
       </section>
 
-      <div className="blog-post-back">
+      <div className="blog-post-back page-reveal">
         <Link to="/blog" className="blog-back-link">
           <svg
             width="14"
@@ -99,7 +125,7 @@ function BlogPost() {
           <span>記事一覧へ戻る</span>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
 
