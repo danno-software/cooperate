@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# 株式会社団野ソフトウェア コーポレートサイト
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React + TypeScript で構築。Vercel でホスティング。
 
-Currently, two official plugins are available:
+## セットアップ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 機密値の自動検出（gitleaks）
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+このリポジトリはパブリックのため、コミット前に [gitleaks](https://github.com/gitleaks/gitleaks) で機密値を自動検出する pre-commit フックを使用しています。
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+初回のみ以下を実行してください:
+
+```bash
+# 1. gitleaks をインストール
+brew install gitleaks
+
+# 2. pre-commit フックを配置
+cat << 'EOF' > .git/hooks/pre-commit
+#!/bin/sh
+gitleaks git --pre-commit --staged --verbose
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "[gitleaks] 機密値が検出されました。コミットを中止します。"
+  echo "誤検知の場合は、.gitleaksignore に該当行を追加してください。"
+  exit 1
+fi
+EOF
+chmod +x .git/hooks/pre-commit
+```
+
+## コマンド
+
+| コマンド | 説明 |
+|---|---|
+| `npm run dev` | 開発サーバー起動 |
+| `npm run build` | プロダクションビルド |
+| `npm run lint` | ESLint |
+
+## ブログ記事の追加
+
+`content/blog/` に Markdown ファイルを置くとビルド時に自動で変換されます。
+
+```
+content/blog/my-article.md → /blog/my-article
+```
+
+frontmatter（必須）:
+
+```md
+---
+title: 記事タイトル
+date: YYYY-MM-DD
+description: 一覧ページに表示される概要文。
+---
 ```

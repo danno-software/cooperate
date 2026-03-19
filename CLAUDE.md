@@ -8,6 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **パブリックリポジトリのため、機密値（APIキー、トークン等）は絶対にコードに含めないこと。**
 
+gitleaks による pre-commit フックでコミット時に自動検出。セットアップ: `brew install gitleaks` → `.git/hooks/pre-commit` を配置。
+
 ## コマンド
 
 - `npm run dev` — 開発サーバー起動
