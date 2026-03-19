@@ -147,9 +147,9 @@ function App() {
               </article>
               <article className="service-card">
                 <span className="service-index">03</span>
-                <h3>Webアプリケーション開発</h3>
+                <h3>AIを活用したプロトタイプ開発</h3>
                 <p>
-                  要件定義から設計・開発・運用まで、Webアプリケーションの構築をトータルでサポートします。
+                  Claude CodeやCodexを活用し、Webアプリのモック・プロトタイプを素早く作成します。
                 </p>
               </article>
               <Link to="/services" className="services-more">

@@ -100,26 +100,28 @@ function Services() {
           <article className="service-detail-card">
             <div className="service-detail-header">
               <span className="service-index">03</span>
-              <h2>Webアプリケーション開発</h2>
+              <h2>AIを活用したプロトタイプ開発</h2>
             </div>
             <div className="service-detail-body">
               <p>
-                要件定義から設計・開発・運用まで、Webアプリケーションの構築をトータルでサポートします。
+                Claude CodeやCodexなどのAIツールを活用し、Webアプリケーションのモック・プロトタイプを素早く作成します。
+                アイデアの検証やデモ用の画面を短期間で形にしたい場合に最適です。
               </p>
               <div className="service-detail-tags">
-                <h3>対応技術</h3>
+                <h3>活用ツール</h3>
                 <ul className="tag-list">
-                  <li>TypeScript</li>
+                  <li>Claude Code</li>
+                  <li>Codex</li>
                   <li>React</li>
-                  <li>Node.js</li>
+                  <li>TypeScript</li>
                 </ul>
               </div>
               <div className="service-detail-scope">
                 <h3>支援内容</h3>
                 <ul>
-                  <li>Webアプリケーションの新規開発</li>
-                  <li>既存システムの改修・機能追加</li>
-                  <li>フロントエンド・バックエンドの設計</li>
+                  <li>Webアプリケーションのモック・プロトタイプ作成</li>
+                  <li>アイデア検証用のデモ画面構築</li>
+                  <li>AIツールを活用した高速な画面実装</li>
                 </ul>
               </div>
             </div>
