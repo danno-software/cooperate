@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
