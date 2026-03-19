@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { getAllPosts } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
 
-function useRevealAll() {
+function useRevealAll(deps: unknown[] = []) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const targets = el.querySelectorAll(".page-reveal");
+    const targets = el.querySelectorAll(".page-reveal:not(.page-visible)");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,7 +22,8 @@ function useRevealAll() {
     );
     targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
   return ref;
 }
 
@@ -54,7 +55,7 @@ function Blog() {
     return matchesSearch && matchesTag;
   });
 
-  const wrapperRef = useRevealAll();
+  const wrapperRef = useRevealAll([filteredPosts]);
 
   return (
     <div ref={wrapperRef}>
