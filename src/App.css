@@ -328,6 +328,94 @@
   }
 }
 
+/* ─── Credentials ─── */
+.cred-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.cred-number-item {
+  text-align: center;
+  padding: 28px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.cred-number-item:hover {
+  border-color: var(--accent);
+}
+
+.cred-number {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.cred-number-unit {
+  font-size: 20px;
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+.cred-number-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.cred-certs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 40px;
+}
+
+.cred-group h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cred-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cred-group li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .cred-numbers {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .cred-number {
+    font-size: 36px;
+  }
+
+  .cred-certs {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 /* ─── Services ─── */
 .services-grid {
   display: flex;
@@ -1214,6 +1302,114 @@
 
 .srv-card-cta:hover svg {
   transform: translateX(4px);
+}
+
+/* pricing */
+.srv-pricing {
+  padding: 80px 40px;
+  background: var(--bg-alt);
+}
+
+.srv-pricing-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.srv-pricing h2 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin: 0 0 16px;
+}
+
+.srv-pricing-note {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0 0 36px;
+  line-height: 1.8;
+}
+
+.srv-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.srv-pricing-card {
+  padding: 32px 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.srv-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.srv-pricing-card--accent {
+  border-color: var(--accent);
+  position: relative;
+}
+
+.srv-pricing-card--accent::before {
+  content: "おすすめ";
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 100px;
+}
+
+.srv-pricing-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 16px;
+}
+
+.srv-pricing-price {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.srv-pricing-amount {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 1;
+}
+
+.srv-pricing-unit {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.srv-pricing-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .srv-pricing {
+    padding: 60px 24px;
+  }
+
+  .srv-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* responsive */

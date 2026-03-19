@@ -63,6 +63,7 @@ function App() {
   usePageMeta("", "株式会社団野ソフトウェア - AWS / GCP / Azure のクラウドインフラ設計・構築から運用最適化、アプリケーション開発まで。", "/");
 
   const aboutRef = useReveal<HTMLElement>();
+  const credentialsRef = useReveal<HTMLElement>();
   const servicesRef = useReveal<HTMLElement>();
   const contactRef = useReveal<HTMLElement>();
 
@@ -128,7 +129,75 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="section section-alt" ref={servicesRef}>
+      <section id="credentials" className="section section-alt" ref={credentialsRef}>
+        <div className="section-layout">
+          <div className="section-label">
+            <span className="section-label-en">Credentials</span>
+            <h2>実績・資格</h2>
+          </div>
+          <div className="section-body">
+            <div className="cred-numbers">
+              <div className="cred-number-item">
+                <span className="cred-number">8</span>
+                <span className="cred-number-unit">年</span>
+                <span className="cred-number-label">インフラ実務経験</span>
+              </div>
+              <div className="cred-number-item">
+                <span className="cred-number">23</span>
+                <span className="cred-number-unit">件</span>
+                <span className="cred-number-label">保有資格</span>
+              </div>
+              <div className="cred-number-item">
+                <span className="cred-number">3</span>
+                <span className="cred-number-unit">社</span>
+                <span className="cred-number-label">対応クラウド</span>
+              </div>
+            </div>
+            <div className="cred-certs">
+              <div className="cred-group">
+                <h3>AWS</h3>
+                <ul>
+                  <li>Solutions Architect Professional</li>
+                  <li>DevOps Engineer Professional</li>
+                  <li>Solutions Architect Associate</li>
+                  <li>Developer Associate</li>
+                </ul>
+              </div>
+              <div className="cred-group">
+                <h3>Google Cloud</h3>
+                <ul>
+                  <li>Professional Cloud Architect</li>
+                </ul>
+              </div>
+              <div className="cred-group">
+                <h3>Microsoft Azure</h3>
+                <ul>
+                  <li>Azure Fundamentals</li>
+                  <li>Azure AI Fundamentals</li>
+                  <li>Security, Compliance, and Identity Fundamentals</li>
+                </ul>
+              </div>
+              <div className="cred-group">
+                <h3>Linux / インフラ</h3>
+                <ul>
+                  <li>LinuC Level 1 / 2 / 3（仮想化・セキュリティ・異種混在環境）</li>
+                  <li>CompTIA Server+</li>
+                </ul>
+              </div>
+              <div className="cred-group">
+                <h3>その他</h3>
+                <ul>
+                  <li>Oracle Master Bronze / Silver</li>
+                  <li>JDLA Deep Learning for General</li>
+                  <li>Python 3 エンジニア認定（基礎・データ分析）</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="section" ref={servicesRef}>
         <div className="section-layout">
           <div className="section-label">
             <span className="section-label-en">Services</span>

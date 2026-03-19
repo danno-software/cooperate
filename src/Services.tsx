@@ -207,6 +207,40 @@ function Services() {
         </div>
       </section>
 
+      <section className="srv-pricing">
+        <div className="srv-pricing-inner">
+          <h2 className="page-reveal">料金・契約形態</h2>
+          <p className="srv-pricing-note page-reveal">
+            業務委託契約でのご提供となります。内容に応じて最適な形態をご提案します。
+          </p>
+          <div className="srv-pricing-grid">
+            <div className="srv-pricing-card page-reveal">
+              <h3>スポット技術相談</h3>
+              <div className="srv-pricing-price">
+                <span className="srv-pricing-amount">2</span>
+                <span className="srv-pricing-unit">万円〜 / 回</span>
+              </div>
+              <p>アーキテクチャの壁打ち、技術選定の相談、既存構成のレビューなど。1〜2時間のオンラインミーティング形式。</p>
+            </div>
+            <div className="srv-pricing-card srv-pricing-card--accent page-reveal">
+              <h3>継続支援</h3>
+              <div className="srv-pricing-price">
+                <span className="srv-pricing-amount">20</span>
+                <span className="srv-pricing-unit">万円〜 / 月</span>
+              </div>
+              <p>月20時間を目安に、インフラ運用・開発支援を継続的に提供します。稼働時間は柔軟に調整可能です。</p>
+            </div>
+            <div className="srv-pricing-card page-reveal">
+              <h3>短期プロジェクト</h3>
+              <div className="srv-pricing-price">
+                <span className="srv-pricing-amount">個別見積もり</span>
+              </div>
+              <p>新規構築、移行、IaC導入など、スコープが明確な案件はプロジェクト単位でお見積りします。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="page-cta">
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
