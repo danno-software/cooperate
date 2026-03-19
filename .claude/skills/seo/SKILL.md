@@ -14,4 +14,14 @@ user-invocable: false
 
 - ページ追加時
 - ドメイン変更時
-- 現在のワンページ構成では更新不要
+
+### 構造化データ（JSON-LD）
+
+`index.html` に `<script type="application/ld+json">` で Organization スキーマを埋め込み済み。
+ページ追加や事業内容の変更時は、JSON-LD の `description` フィールドも更新すること。
+
+含まれる情報:
+- 会社名・代表者名（団野 優人）
+- 設立年・所在地
+- 事業内容キーワード（AWS/GCP/Azure/Terraform/Bicep/VPC/VNet等）
+- 連絡先メールアドレス

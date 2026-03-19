@@ -67,8 +67,9 @@ function App() {
             株式会社団野ソフトウェア
           </a>
           <nav className="nav">
-            <a href="#about">概要</a>
-            <a href="#services">事業</a>
+            <Link to="/about">概要</Link>
+            <Link to="/services">事業</Link>
+            <Link to="/blog">ブログ</Link>
             <a href="#contact">お問い合わせ</a>
           </nav>
         </div>
@@ -119,6 +120,12 @@ function App() {
                 <dd>ソフトウェア開発・技術コンサルティング</dd>
               </div>
             </dl>
+            <Link to="/about" className="services-more" style={{ marginTop: 32 }}>
+              <span>詳しく見る</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
