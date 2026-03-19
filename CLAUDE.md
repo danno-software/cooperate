@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## プロジェクト概要
 
-株式会社団野ソフトウェアのコーポレートサイト。Vite + React + TypeScript。
+株式会社団野ソフトウェアのコーポレートサイト。Vite + React + TypeScript。Vercelでホスティング。
 
 **パブリックリポジトリのため、機密値（APIキー、トークン等）は絶対にコードに含めないこと。**
 

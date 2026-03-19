@@ -1,4 +1,5 @@
 import { useEffect, useRef, type RefObject } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 function useReveal<T extends HTMLElement>(): RefObject<T | null> {
@@ -132,25 +133,31 @@ function App() {
             <div className="services-grid">
               <article className="service-card">
                 <span className="service-index">01</span>
+                <h3>クラウドインフラ構築・IaC導入</h3>
+                <p>
+                  AWS / GCP / Azure のインフラ設計から、Terraform・Bicepによるコード管理の導入まで支援します。
+                </p>
+              </article>
+              <article className="service-card">
+                <span className="service-index">02</span>
+                <h3>ネットワーク設計</h3>
+                <p>
+                  VPC・VNet設計など、セキュアで拡張性のあるクラウドネットワークを構築します。
+                </p>
+              </article>
+              <article className="service-card">
+                <span className="service-index">03</span>
                 <h3>Webアプリケーション開発</h3>
                 <p>
                   要件定義から設計・開発・運用まで、Webアプリケーションの構築をトータルでサポートします。
                 </p>
               </article>
-              <article className="service-card">
-                <span className="service-index">02</span>
-                <h3>システム設計・技術コンサルティング</h3>
-                <p>
-                  アーキテクチャ設計やコードレビュー、技術選定のアドバイスを行います。
-                </p>
-              </article>
-              <article className="service-card">
-                <span className="service-index">03</span>
-                <h3>開発チーム支援</h3>
-                <p>
-                  既存チームへの参画やペアプログラミングを通じて、開発力の強化を支援します。
-                </p>
-              </article>
+              <Link to="/services" className="services-more">
+                <span>詳しく見る</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
