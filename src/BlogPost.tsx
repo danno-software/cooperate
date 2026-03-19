@@ -77,14 +77,9 @@ function BlogPost() {
         <p className="blog-post-cta-text">
           お仕事のご依頼・ご相談はお気軽にどうぞ。
         </p>
-        <a href="/#contact" className="blog-post-cta-button">
+        <a href="mailto:yuto7924@gmail.com?subject=お問い合わせ" className="blog-post-cta-button">
           メールで問い合わせる
         </a>
-        <p className="blog-post-cta-email">
-          フォームから送信できない場合は{" "}
-          <a href="mailto:yuto7924@gmail.com">yuto7924@gmail.com</a>{" "}
-          までご連絡ください。
-        </p>
       </section>
 
       <div className="blog-post-back">
