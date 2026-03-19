@@ -99,11 +99,11 @@ function Services() {
 
       <section className="srv-strength">
         <div className="srv-strength-inner">
-          <h2 className="page-reveal">1人法人だからできること</h2>
+          <h2 className="page-reveal">私たちの強み</h2>
           <div className="srv-strength-grid">
             {[
-              { title: "伝言ゲームなし", desc: "窓口と作業者が同一人物。要件の認識ずれが起きません。" },
-              { title: "意思決定が速い", desc: "社内承認不要。相談から見積もり・着手まで最短で対応します。" },
+              { title: "伝言ゲームなし", desc: "担当者が直接対応。要件の認識ずれが起きません。" },
+              { title: "意思決定が速い", desc: "相談から見積もり・着手まで最短で対応します。" },
               { title: "柔軟な関わり方", desc: "スポットの技術相談から継続的な開発支援まで、規模を問わず対応できます。" },
             ].map((item, i) => (
               <div className="srv-strength-item page-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
@@ -240,7 +240,7 @@ function Services() {
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
           <a href={BOOKING_URL} className="contact-button">
-            <span>無料相談を予約する</span>
+            <span>お問い合わせ</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

@@ -33,7 +33,7 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
           初回のご相談は無料です。お気軽にお問い合わせください。
         </p>
         <a href={BOOKING_URL} className="contact-button">
-          <span>無料相談を予約する</span>
+          <span>お問い合わせ</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -72,7 +72,7 @@ function App() {
             アプリケーション開発まで一貫して支援します。
           </p>
           <a href={BOOKING_URL} className="hero-cta">
-            無料相談を予約する
+            お問い合わせ
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

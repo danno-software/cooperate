@@ -1,13 +1,6 @@
-// Cal.com のURLが決まったらここを差し替えるだけで全CTAが切り替わる
-// 例: "https://cal.com/yutodanno/30min"
-export const BOOKING_URL = "https://cal.com/yutodanno/30min";
+export const BOOKING_URL = "mailto:yuto7924@gmail.com";
 
 export function bookingUrl(subject?: string): string {
-  if (BOOKING_URL.startsWith("mailto:")) {
-    return subject
-      ? `mailto:yuto7924@gmail.com?subject=${encodeURIComponent(subject)}&body=【お名前】%0A%0A【ご相談内容】%0A`
-      : BOOKING_URL;
-  }
-  // Cal.com の場合はそのまま返す（subjectはCal側で設定）
-  return BOOKING_URL;
+  const sub = subject ?? "お問い合わせ";
+  return `mailto:yuto7924@gmail.com?subject=${encodeURIComponent(sub)}&body=%E3%80%90%E3%81%8A%E5%90%8D%E5%89%8D%E3%80%91%0A%0A%E3%80%90%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%E3%80%91%0A`;
 }

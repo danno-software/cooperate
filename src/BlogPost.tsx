@@ -105,7 +105,7 @@ function BlogPost() {
           技術的な課題、お気軽にご相談ください。初回無料。
         </p>
         <a href={BOOKING_URL} className="blog-post-cta-button">
-          無料相談を予約する
+          お問い合わせ
         </a>
       </section>
 

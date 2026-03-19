@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BOOKING_URL } from "./booking.ts";
 
 function Footer() {
   return (
@@ -23,9 +22,6 @@ function Footer() {
           <div className="footer-col">
             <p className="footer-col-title">お問い合わせ</p>
             <div className="footer-nav">
-              <a href={BOOKING_URL}>
-                無料相談を予約する
-              </a>
               <a href="mailto:yuto7924@gmail.com">
                 yuto7924@gmail.com
               </a>

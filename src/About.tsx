@@ -65,7 +65,7 @@ function About() {
               「もっと早く相談できる相手がいれば」という声を何度も聞いてきました。
             </p>
             <p>
-              1人法人だからこそ、伝言ゲームなしのスピード感と、
+              少数精鋭だからこそ、伝言ゲームなしのスピード感と、
               技術に対する責任を持った支援が可能です。
               お客様のチームの一員のような距離感で、技術課題の解決をお手伝いします。
             </p>
@@ -90,7 +90,7 @@ function About() {
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
           <a href={BOOKING_URL} className="contact-button">
-            <span>無料相談を予約する</span>
+            <span>お問い合わせ</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

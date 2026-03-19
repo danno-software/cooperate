@@ -30,7 +30,7 @@ function Header() {
             className="nav-cta"
             onClick={() => setMenuOpen(false)}
           >
-            無料相談を予約
+            お問い合わせ
           </a>
         </nav>
       </div>
