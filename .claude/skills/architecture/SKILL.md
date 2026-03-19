@@ -6,16 +6,21 @@ user-invocable: false
 
 ## アーキテクチャ
 
-Vite + React + TypeScript のLP風ワンページコーポレートサイト。
+Vite + React + TypeScript のコーポレートサイト。React Routerで複数ページ構成。
 
 ### ファイル構成
 
 - `index.html` — エントリーポイント（lang="ja"）、Google Fonts読み込み
-- `src/main.tsx` — Reactのマウント
-- `src/App.tsx` — LP全体の構成（Header / Hero / About / Services / ContactSection / Footer）
+- `src/main.tsx` — Reactのマウント、ルーティング定義
+- `src/App.tsx` — トップページ（Hero / About / Services / Contact）
+- `src/About.tsx` — `/about` 会社概要詳細ページ
+- `src/Services.tsx` — `/services` 事業内容詳細ページ
+- `src/Blog.tsx` — `/blog` ブログ一覧ページ
+- `src/BlogPost.tsx` — `/blog/:slug` ブログ記事ページ
+- `src/blogLoader.ts` — Markdown読み込み・変換ユーティリティ
+- `content/blog/*.md` — ブログ記事（Markdownファイル）
 - `src/index.css` — CSS変数定義、ダークモード対応、リビールアニメーション
 - `src/App.css` — コンポーネントスタイル、レスポンシブ対応
-- `api/contact.ts` — Vercel Serverless Function（SendGrid連携のお問い合わせ送信）
 - `public/favicon.svg` — ファビコン
 - `public/sitemap.xml` — サイトマップ
 - `public/robots.txt` — クローラー設定

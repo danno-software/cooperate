@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## スキル
 
-詳細は `.claude/skills/` を参照。architecture（ファイル構成・デザイン）、deploy（Vercel・環境変数）、seo（sitemap更新ルール）。
+詳細は `.claude/skills/` を参照。architecture（ファイル構成・デザイン）、deploy（Vercel・環境変数）、seo（sitemap更新ルール）、blog（記事の追加・管理方法）。
 
 ## 返信言語
 

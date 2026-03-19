@@ -16,6 +16,7 @@ function Services() {
           </Link>
           <nav className="nav">
             <Link to="/">トップ</Link>
+            <Link to="/blog">ブログ</Link>
             <Link to="/#contact">お問い合わせ</Link>
           </nav>
         </div>
