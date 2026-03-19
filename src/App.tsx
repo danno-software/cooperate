@@ -32,7 +32,7 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
           お仕事のご依頼・ご相談はお気軽にどうぞ。
         </p>
         <a
-          href="mailto:yuto7924@gmail.com?subject=お問い合わせ"
+          href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
           className="contact-button"
         >
           <span>メールで問い合わせる</span>

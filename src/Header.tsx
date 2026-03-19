@@ -32,7 +32,7 @@ function Header() {
             </a>
           ) : (
             <a
-              href="mailto:yuto7924@gmail.com?subject=お問い合わせ"
+              href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
               onClick={() => setMenuOpen(false)}
             >
               お問い合わせ

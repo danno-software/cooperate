@@ -48,7 +48,7 @@ function About() {
       <section className="services-cta">
         <p>まずはお気軽にご相談ください。</p>
         <a
-          href="mailto:yuto7924@gmail.com?subject=お問い合わせ"
+          href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
           className="contact-button"
         >
           <span>メールで問い合わせる</span>
