@@ -159,6 +159,13 @@ function App() {
                   Claude CodeやCodexを活用し、Webアプリのモック・プロトタイプを素早く作成します。
                 </p>
               </article>
+              <article className="service-card">
+                <span className="service-index">04</span>
+                <h3>クラウドコスト最適化</h3>
+                <p>
+                  既存のコード・インフラ構成を調査し、クラウド利用料のボトルネックを特定・削減します。
+                </p>
+              </article>
               <Link to="/services" className="services-more">
                 <span>詳しく見る</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

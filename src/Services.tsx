@@ -38,6 +38,7 @@ function Services() {
             <li>クラウド環境を手動で管理していて、属人化やミスが不安</li>
             <li>インフラ専任のエンジニアがおらず、設計・構築を任せたい</li>
             <li>採用が決まるまでの間、インフラまわりを外部に頼りたい</li>
+            <li>クラウドの月額コストが高いが、どこを削ればいいかわからない</li>
           </ul>
         </div>
       </section>
@@ -154,6 +155,36 @@ function Services() {
                   <li>Webアプリケーションのモック・プロトタイプ作成</li>
                   <li>アイデア検証用のデモ画面構築</li>
                   <li>AIツールを活用した高速な画面実装</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article className="service-detail-card">
+            <div className="service-detail-header">
+              <span className="service-index">04</span>
+              <h2>クラウドコスト最適化</h2>
+            </div>
+            <div className="service-detail-body">
+              <p>
+                既存のアプリケーションコードやインフラ構成を調査し、コストのボトルネックを特定します。
+                不要なリソースの整理やアーキテクチャの見直しを通じて、クラウド利用料の削減を実現します。
+              </p>
+              <div className="service-detail-tags">
+                <h3>対応クラウド</h3>
+                <ul className="tag-list">
+                  <li>AWS</li>
+                  <li>Google Cloud</li>
+                  <li>Azure</li>
+                </ul>
+              </div>
+              <div className="service-detail-scope">
+                <h3>支援内容</h3>
+                <ul>
+                  <li>アプリケーションコード・設定の調査によるボトルネック特定</li>
+                  <li>未使用・過剰スペックなリソースの洗い出しと整理</li>
+                  <li>リザーブドインスタンス・Savings Plans の提案</li>
+                  <li>インフラ構成の見直しによるコスト削減</li>
                 </ul>
               </div>
             </div>
