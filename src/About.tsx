@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { usePageMeta } from "./usePageMeta.ts";
+import { BOOKING_URL } from "./booking.ts";
 
 function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -52,6 +53,26 @@ function About() {
         </div>
       </section>
 
+      <section className="abt-message">
+        <div className="abt-message-inner page-reveal">
+          <h2>代表メッセージ</h2>
+          <div className="abt-message-body">
+            <p>
+              SIerでのインフラエンジニアを経て、2024年に株式会社団野ソフトウェアを設立しました。
+            </p>
+            <p>
+              8年間、AWS・GCP・Azureを中心としたクラウドインフラの設計・構築・運用に携わるなかで、
+              「もっと早く相談できる相手がいれば」という声を何度も聞いてきました。
+            </p>
+            <p>
+              1人法人だからこそ、伝言ゲームなしのスピード感と、
+              技術に対する責任を持った支援が可能です。
+              お客様のチームの一員のような距離感で、技術課題の解決をお手伝いします。
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="abt-detail">
         <div className="abt-detail-inner">
           <dl className="abt-list">
@@ -68,15 +89,17 @@ function About() {
       <section className="page-cta">
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
-          <a
-            href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
-            className="contact-button"
-          >
-            <span>メールで問い合わせる</span>
+          <a href={BOOKING_URL} className="contact-button">
+            <span>無料相談を予約する</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
+          <div className="trust-badges">
+            <span className="trust-badge">初回相談無料</span>
+            <span className="trust-badge">NDA対応可</span>
+            <span className="trust-badge">リモート対応</span>
+          </div>
         </div>
       </section>
     </div>

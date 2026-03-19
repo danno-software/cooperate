@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BOOKING_URL } from "./booking.ts";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,9 +22,16 @@ function Header() {
           <span />
         </button>
         <nav className={`nav${menuOpen ? " nav--open" : ""}`}>
-          <Link to="/about">概要</Link>
-          <Link to="/services">事業</Link>
-          <Link to="/blog">ブログ</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>概要</Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>事業</Link>
+          <Link to="/blog" onClick={() => setMenuOpen(false)}>ブログ</Link>
+          <a
+            href={BOOKING_URL}
+            className="nav-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            無料相談を予約
+          </a>
         </nav>
       </div>
     </header>

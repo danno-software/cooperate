@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
+import { BOOKING_URL } from "./booking.ts";
 
 function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -101,10 +102,10 @@ function BlogPost() {
 
       <section className="blog-post-cta page-reveal">
         <p className="blog-post-cta-text">
-          お仕事のご依頼・ご相談はお気軽にどうぞ。
+          技術的な課題、お気軽にご相談ください。初回無料。
         </p>
-        <a href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A" className="blog-post-cta-button">
-          メールで問い合わせる
+        <a href={BOOKING_URL} className="blog-post-cta-button">
+          無料相談を予約する
         </a>
       </section>
 

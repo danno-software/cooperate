@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePageMeta } from "./usePageMeta.ts";
+import { BOOKING_URL, bookingUrl } from "./booking.ts";
 
 function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,6 +23,32 @@ function useRevealAll() {
     return () => observer.disconnect();
   }, []);
   return ref;
+}
+
+const faqs = [
+  { q: "初回の相談に費用はかかりますか？", a: "いいえ。初回のヒアリング・ご相談は無料です。課題やご要望をお聞かせいただいたうえで、お見積りをご提示します。" },
+  { q: "リモートでの対応は可能ですか？", a: "はい。基本的にオンラインで対応しています。オンラインミーティング・チャットツール等、お客様の環境に合わせて柔軟に対応します。" },
+  { q: "NDAの締結は可能ですか？", a: "はい、可能です。ご要望に応じて業務開始前にNDAを締結します。" },
+  { q: "最低契約期間はありますか？", a: "ありません。スポットでの技術相談から継続支援まで、期間の縛りなくご利用いただけます。" },
+  { q: "どのくらいの規模の案件から対応できますか？", a: "規模は問いません。「ちょっと聞きたい」レベルのスポット相談から、数ヶ月のプロジェクトまで対応しています。" },
+  { q: "すぐに稼働を開始できますか？", a: "状況によりますが、最短で翌営業日から着手可能です。まずはお気軽にご相談ください。" },
+];
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`faq-item${open ? " faq-item--open" : ""}`}>
+      <button type="button" className="faq-question" onClick={() => setOpen(!open)}>
+        <span>{q}</span>
+        <svg className="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </button>
+      <div className="faq-answer">
+        <p>{a}</p>
+      </div>
+    </div>
+  );
 }
 
 function Services() {
@@ -113,60 +140,28 @@ function Services() {
         <div className="srv-detail-inner">
           {[
             {
-              num: "01",
-              title: "クラウドインフラ設計・構築",
+              num: "01", title: "クラウドインフラ設計・構築",
               desc: "クラウド環境の設計・構築を、IaC（Infrastructure as Code）による再現性の高い形で提供します。ネットワーク設計やセキュリティ設計も含め、インフラ全体を一貫して対応します。",
-              tagLabel: "対応技術",
-              tags: ["AWS", "Google Cloud", "Azure", "Terraform", "Bicep"],
-              scope: [
-                "クラウド環境の設計・構築（新規・移行）",
-                "Terraform / Bicep によるIaC導入・既存環境のコード化",
-                "VPC / VNet 設計、サブネット分割、ルーティング設計",
-                "セキュリティグループ・IAM ポリシーの設計",
-                "マルチアカウント / マルチクラウド構成の設計",
-                "CI/CD パイプラインとの連携",
-              ],
+              tagLabel: "対応技術", tags: ["AWS", "Google Cloud", "Azure", "Terraform", "Bicep"],
+              scope: ["クラウド環境の設計・構築（新規・移行）", "Terraform / Bicep によるIaC導入・既存環境のコード化", "VPC / VNet 設計、サブネット分割、ルーティング設計", "セキュリティグループ・IAM ポリシーの設計", "マルチアカウント / マルチクラウド構成の設計", "CI/CD パイプラインとの連携"],
             },
             {
-              num: "02",
-              title: "クラウド運用・最適化",
+              num: "02", title: "クラウド運用・最適化",
               desc: "稼働中のクラウド環境を対象に、コスト削減・監視強化・運用フロー改善を支援します。現状を調査したうえで、優先度の高い施策から着手します。",
-              tagLabel: "対応技術",
-              tags: ["AWS", "Google Cloud", "Azure", "CloudWatch", "Datadog"],
-              scope: [
-                "クラウド利用料の分析・コスト削減提案",
-                "未使用・過剰リソースの洗い出しと整理",
-                "リザーブドインスタンス・Savings Plans の検討",
-                "監視・アラート基盤の設計と導入",
-                "ログ収集・分析基盤の構築",
-                "運用手順の整備・自動化",
-              ],
+              tagLabel: "対応技術", tags: ["AWS", "Google Cloud", "Azure", "CloudWatch", "Datadog"],
+              scope: ["クラウド利用料の分析・コスト削減提案", "未使用・過剰リソースの洗い出しと整理", "リザーブドインスタンス・Savings Plans の検討", "監視・アラート基盤の設計と導入", "ログ収集・分析基盤の構築", "運用手順の整備・自動化"],
             },
             {
-              num: "03",
-              title: "アプリケーション開発",
+              num: "03", title: "アプリケーション開発",
               desc: "Webアプリケーションの設計・開発を行います。AIツールを活用した高速なプロトタイピングから、本番運用を見据えた開発まで対応します。",
-              tagLabel: "対応技術",
-              tags: ["React", "TypeScript", "Node.js", "Python", "Claude Code"],
-              scope: [
-                "Webアプリケーションの設計・実装",
-                "AIツールを活用したプロトタイプの素早い構築",
-                "API 設計・バックエンド開発",
-                "既存アプリケーションの改修・機能追加",
-              ],
+              tagLabel: "対応技術", tags: ["React", "TypeScript", "Node.js", "Python", "Claude Code"],
+              scope: ["Webアプリケーションの設計・実装", "AIツールを活用したプロトタイプの素早い構築", "API 設計・バックエンド開発", "既存アプリケーションの改修・機能追加"],
             },
             {
-              num: "04",
-              title: "技術コンサルティング",
+              num: "04", title: "技術コンサルティング",
               desc: "技術選定やアーキテクチャの意思決定を第三者の視点から支援します。特定の技術や製品に偏らない、実務経験に基づいた助言を提供します。",
-              tagLabel: "対応領域",
-              tags: ["クラウドアーキテクチャ", "技術選定", "セキュリティ", "DevOps"],
-              scope: [
-                "既存アーキテクチャのレビュー・改善提案",
-                "技術選定・ツール選定の支援",
-                "チームへのナレッジ共有・ハンズオン支援",
-                "セキュリティ観点でのレビュー・助言",
-              ],
+              tagLabel: "対応領域", tags: ["クラウドアーキテクチャ", "技術選定", "セキュリティ", "DevOps"],
+              scope: ["既存アーキテクチャのレビュー・改善提案", "技術選定・ツール選定の支援", "チームへのナレッジ共有・ハンズオン支援", "セキュリティ観点でのレビュー・助言"],
             },
           ].map((svc) => (
             <article className="srv-card page-reveal" key={svc.num}>
@@ -178,24 +173,13 @@ function Services() {
                 <p className="srv-card-desc">{svc.desc}</p>
                 <div className="srv-card-tags">
                   <h3>{svc.tagLabel}</h3>
-                  <ul>
-                    {svc.tags.map((t) => (
-                      <li key={t}>{t}</li>
-                    ))}
-                  </ul>
+                  <ul>{svc.tags.map((t) => (<li key={t}>{t}</li>))}</ul>
                 </div>
                 <div className="srv-card-scope">
                   <h3>支援内容</h3>
-                  <ul>
-                    {svc.scope.map((s) => (
-                      <li key={s}>{s}</li>
-                    ))}
-                  </ul>
+                  <ul>{svc.scope.map((s) => (<li key={s}>{s}</li>))}</ul>
                 </div>
-                <a
-                  href={`mailto:yuto7924@gmail.com?subject=${encodeURIComponent(svc.title + "について相談")}&body=【お名前】%0A%0A【ご相談内容】%0A`}
-                  className="srv-card-cta"
-                >
+                <a href={bookingUrl(svc.title + "について相談")} className="srv-card-cta">
                   このサービスについて相談する
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -241,18 +225,31 @@ function Services() {
         </div>
       </section>
 
+      <section className="srv-faq">
+        <div className="srv-faq-inner">
+          <h2 className="page-reveal">よくある質問</h2>
+          <div className="faq-list page-reveal">
+            {faqs.map((faq) => (
+              <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="page-cta">
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
-          <a
-            href="mailto:yuto7924@gmail.com?subject=お問い合わせ&body=【お名前】%0A%0A【ご相談内容】%0A"
-            className="contact-button"
-          >
-            <span>メールで問い合わせる</span>
+          <a href={BOOKING_URL} className="contact-button">
+            <span>無料相談を予約する</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
+          <div className="trust-badges">
+            <span className="trust-badge">初回相談無料</span>
+            <span className="trust-badge">NDA対応可</span>
+            <span className="trust-badge">リモート対応</span>
+          </div>
         </div>
       </section>
     </div>
