@@ -3,7 +3,7 @@ import { usePageMeta } from "./usePageMeta.ts";
 function Services() {
   usePageMeta(
     "事業内容",
-    "クラウドインフラ構築・IaC導入、ネットワーク設計、AIプロトタイプ開発、クラウドコスト最適化。株式会社団野ソフトウェア。",
+    "クラウドインフラ設計・構築、クラウド運用・最適化、アプリケーション開発、技術コンサルティング。株式会社団野ソフトウェア。",
     "/services"
   );
 
@@ -26,6 +26,8 @@ function Services() {
             <li>インフラ専任のエンジニアがおらず、設計・構築を任せたい</li>
             <li>採用が決まるまでの間、インフラまわりを外部に頼りたい</li>
             <li>クラウドの月額コストが高いが、どこを削ればいいかわからない</li>
+            <li>新しいサービスを素早く形にして検証したい</li>
+            <li>技術的な判断を相談できる相手がいない</li>
           </ul>
         </div>
       </section>
@@ -56,15 +58,15 @@ function Services() {
           <article className="service-detail-card">
             <div className="service-detail-header">
               <span className="service-index">01</span>
-              <h2>クラウドインフラ構築・IaC導入</h2>
+              <h2>クラウドインフラ設計・構築</h2>
             </div>
             <div className="service-detail-body">
               <p>
-                手動で管理されているクラウド環境を、Terraform や Bicep を用いてコードとして管理できる状態へ移行します。
-                インフラの変更履歴が残り、再現性が高まることで、運用コストの削減と障害リスクの低減を実現します。
+                クラウド環境の設計・構築を、IaC（Infrastructure as Code）による再現性の高い形で提供します。
+                ネットワーク設計やセキュリティ設計も含め、インフラ全体を一貫して対応します。
               </p>
               <div className="service-detail-tags">
-                <h3>対応クラウド・ツール</h3>
+                <h3>対応技術</h3>
                 <ul className="tag-list">
                   <li>AWS</li>
                   <li>Google Cloud</li>
@@ -76,9 +78,11 @@ function Services() {
               <div className="service-detail-scope">
                 <h3>支援内容</h3>
                 <ul>
-                  <li>既存環境のコード化（Infrastructure as Code 導入）</li>
-                  <li>新規クラウド環境の設計・構築</li>
-                  <li>マルチクラウド構成の設計</li>
+                  <li>クラウド環境の設計・構築（新規・移行）</li>
+                  <li>Terraform / Bicep によるIaC導入・既存環境のコード化</li>
+                  <li>VPC / VNet 設計、サブネット分割、ルーティング設計</li>
+                  <li>セキュリティグループ・IAM ポリシーの設計</li>
+                  <li>マルチアカウント / マルチクラウド構成の設計</li>
                   <li>CI/CD パイプラインとの連携</li>
                 </ul>
               </div>
@@ -88,30 +92,32 @@ function Services() {
           <article className="service-detail-card">
             <div className="service-detail-header">
               <span className="service-index">02</span>
-              <h2>ネットワーク設計</h2>
+              <h2>クラウド運用・最適化</h2>
             </div>
             <div className="service-detail-body">
               <p>
-                クラウド上のネットワーク設計を、セキュリティと拡張性を両立する形で構築します。
-                VPC / VNet の設計からサブネット分割、ファイアウォールルールの策定まで対応します。
+                稼働中のクラウド環境を対象に、コスト削減・監視強化・運用フロー改善を支援します。
+                現状を調査したうえで、優先度の高い施策から着手します。
               </p>
               <div className="service-detail-tags">
                 <h3>対応技術</h3>
                 <ul className="tag-list">
-                  <li>AWS VPC</li>
-                  <li>Azure VNet</li>
-                  <li>GCP VPC</li>
-                  <li>サブネット設計</li>
-                  <li>セキュリティグループ</li>
+                  <li>AWS</li>
+                  <li>Google Cloud</li>
+                  <li>Azure</li>
+                  <li>CloudWatch</li>
+                  <li>Datadog</li>
                 </ul>
               </div>
               <div className="service-detail-scope">
                 <h3>支援内容</h3>
                 <ul>
-                  <li>VPC / VNet のアーキテクチャ設計</li>
-                  <li>サブネット分割とルーティング設計</li>
-                  <li>セキュリティグループ・NSG の設計</li>
-                  <li>VPN / ピアリング接続の構築</li>
+                  <li>クラウド利用料の分析・コスト削減提案</li>
+                  <li>未使用・過剰リソースの洗い出しと整理</li>
+                  <li>リザーブドインスタンス・Savings Plans の検討</li>
+                  <li>監視・アラート基盤の設計と導入</li>
+                  <li>ログ収集・分析基盤の構築</li>
+                  <li>運用手順の整備・自動化</li>
                 </ul>
               </div>
             </div>
@@ -120,28 +126,30 @@ function Services() {
           <article className="service-detail-card">
             <div className="service-detail-header">
               <span className="service-index">03</span>
-              <h2>AIを活用したプロトタイプ開発</h2>
+              <h2>アプリケーション開発</h2>
             </div>
             <div className="service-detail-body">
               <p>
-                Claude CodeやCodexなどのAIツールを活用し、Webアプリケーションのモック・プロトタイプを素早く作成します。
-                アイデアの検証やデモ用の画面を短期間で形にしたい場合に最適です。
+                Webアプリケーションの設計・開発を行います。
+                AIツールを活用した高速なプロトタイピングから、本番運用を見据えた開発まで対応します。
               </p>
               <div className="service-detail-tags">
-                <h3>活用ツール</h3>
+                <h3>対応技術</h3>
                 <ul className="tag-list">
-                  <li>Claude Code</li>
-                  <li>Codex</li>
                   <li>React</li>
                   <li>TypeScript</li>
+                  <li>Node.js</li>
+                  <li>Python</li>
+                  <li>Claude Code</li>
                 </ul>
               </div>
               <div className="service-detail-scope">
                 <h3>支援内容</h3>
                 <ul>
-                  <li>Webアプリケーションのモック・プロトタイプ作成</li>
-                  <li>アイデア検証用のデモ画面構築</li>
-                  <li>AIツールを活用した高速な画面実装</li>
+                  <li>Webアプリケーションの設計・実装</li>
+                  <li>AIツールを活用したプロトタイプの素早い構築</li>
+                  <li>API 設計・バックエンド開発</li>
+                  <li>既存アプリケーションの改修・機能追加</li>
                 </ul>
               </div>
             </div>
@@ -150,28 +158,29 @@ function Services() {
           <article className="service-detail-card">
             <div className="service-detail-header">
               <span className="service-index">04</span>
-              <h2>クラウドコスト最適化</h2>
+              <h2>技術コンサルティング</h2>
             </div>
             <div className="service-detail-body">
               <p>
-                既存のアプリケーションコードやインフラ構成を調査し、コストのボトルネックを特定します。
-                不要なリソースの整理やアーキテクチャの見直しを通じて、クラウド利用料の削減を実現します。
+                技術選定やアーキテクチャの意思決定を第三者の視点から支援します。
+                特定の技術や製品に偏らない、実務経験に基づいた助言を提供します。
               </p>
               <div className="service-detail-tags">
-                <h3>対応クラウド</h3>
+                <h3>対応領域</h3>
                 <ul className="tag-list">
-                  <li>AWS</li>
-                  <li>Google Cloud</li>
-                  <li>Azure</li>
+                  <li>クラウドアーキテクチャ</li>
+                  <li>技術選定</li>
+                  <li>セキュリティ</li>
+                  <li>DevOps</li>
                 </ul>
               </div>
               <div className="service-detail-scope">
                 <h3>支援内容</h3>
                 <ul>
-                  <li>アプリケーションコード・設定の調査によるボトルネック特定</li>
-                  <li>未使用・過剰スペックなリソースの洗い出しと整理</li>
-                  <li>リザーブドインスタンス・Savings Plans の提案</li>
-                  <li>インフラ構成の見直しによるコスト削減</li>
+                  <li>既存アーキテクチャのレビュー・改善提案</li>
+                  <li>技術選定・ツール選定の支援</li>
+                  <li>チームへのナレッジ共有・ハンズオン支援</li>
+                  <li>セキュリティ観点でのレビュー・助言</li>
                 </ul>
               </div>
             </div>

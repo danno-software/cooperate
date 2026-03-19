@@ -106,7 +106,7 @@ function App() {
               </div>
               <div className="about-row">
                 <dt>事業内容</dt>
-                <dd>ソフトウェア開発・技術コンサルティング</dd>
+                <dd>クラウドインフラ設計・構築 / クラウド運用・最適化 / アプリケーション開発 / 技術コンサルティング</dd>
               </div>
             </dl>
             <Link to="/about" className="services-more" style={{ marginTop: 32 }}>
@@ -129,30 +129,30 @@ function App() {
             <div className="services-grid">
               <article className="service-card">
                 <span className="service-index">01</span>
-                <h3>クラウドインフラ構築・IaC導入</h3>
+                <h3>クラウドインフラ設計・構築</h3>
                 <p>
-                  AWS / GCP / Azure のインフラ設計から、Terraform・Bicepによるコード管理の導入まで支援します。
+                  AWS / GCP / Azure の設計・構築からIaC導入、ネットワーク・セキュリティ設計まで一貫して対応します。
                 </p>
               </article>
               <article className="service-card">
                 <span className="service-index">02</span>
-                <h3>ネットワーク設計</h3>
+                <h3>クラウド運用・最適化</h3>
                 <p>
-                  VPC・VNet設計など、セキュアで拡張性のあるクラウドネットワークを構築します。
+                  コスト分析、監視基盤の整備、運用改善など、既存環境をより効率的に保つための支援を行います。
                 </p>
               </article>
               <article className="service-card">
                 <span className="service-index">03</span>
-                <h3>AIを活用したプロトタイプ開発</h3>
+                <h3>アプリケーション開発</h3>
                 <p>
-                  Claude CodeやCodexを活用し、Webアプリのモック・プロトタイプを素早く作成します。
+                  Webアプリケーションの設計・開発から、AIツールを活用したプロトタイプの素早い構築まで対応します。
                 </p>
               </article>
               <article className="service-card">
                 <span className="service-index">04</span>
-                <h3>クラウドコスト最適化</h3>
+                <h3>技術コンサルティング</h3>
                 <p>
-                  既存のコード・インフラ構成を調査し、クラウド利用料のボトルネックを特定・削減します。
+                  アーキテクチャレビュー、技術選定、チームへのナレッジ共有など、技術的な意思決定を支援します。
                 </p>
               </article>
               <Link to="/services" className="services-more">

@@ -3,7 +3,7 @@ import { usePageMeta } from "./usePageMeta.ts";
 function About() {
   usePageMeta(
     "会社概要",
-    "株式会社団野ソフトウェアの会社概要。代表 団野優人。ソフトウェア開発・技術コンサルティング。",
+    "株式会社団野ソフトウェアの会社概要。代表 団野優人。クラウドインフラ設計・構築、運用・最適化、アプリケーション開発、技術コンサルティング。",
     "/about"
   );
 
@@ -31,7 +31,7 @@ function About() {
             </div>
             <div className="about-row">
               <dt>事業内容</dt>
-              <dd>ソフトウェア開発・技術コンサルティング</dd>
+              <dd>クラウドインフラ設計・構築 / クラウド運用・最適化 / アプリケーション開発 / 技術コンサルティング</dd>
             </div>
             <div className="about-row">
               <dt>所在地</dt>
