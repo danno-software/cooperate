@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "./blogLoader.ts";
-import "./App.css";
+import { usePageMeta } from "./usePageMeta.ts";
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
@@ -12,9 +11,10 @@ function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
+  usePageMeta(
+    post?.title ?? "記事が見つかりません",
+    post?.description ?? ""
+  );
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -22,19 +22,6 @@ function BlogPost() {
 
   return (
     <>
-      <header className="header">
-        <div className="header-inner">
-          <Link to="/" className="logo">
-            株式会社団野ソフトウェア
-          </Link>
-          <nav className="nav">
-            <Link to="/">トップ</Link>
-            <Link to="/blog">ブログ</Link>
-            <Link to="/#contact">お問い合わせ</Link>
-          </nav>
-        </div>
-      </header>
-
       <article className="blog-post">
         <div className="blog-post-header">
           <time className="blog-post-date">{formatDate(post.date)}</time>
@@ -63,13 +50,6 @@ function BlogPost() {
           <span>記事一覧へ戻る</span>
         </Link>
       </div>
-
-      <footer className="footer">
-        <div className="footer-inner">
-          <span className="footer-logo">株式会社団野ソフトウェア</span>
-          <p>&copy; {new Date().getFullYear()} Danno Software</p>
-        </div>
-      </footer>
     </>
   );
 }

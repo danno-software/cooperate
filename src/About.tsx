@@ -1,28 +1,13 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./App.css";
+import { usePageMeta } from "./usePageMeta.ts";
 
 function About() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageMeta(
+    "会社概要",
+    "株式会社団野ソフトウェアの会社概要。代表 団野優人。ソフトウェア開発・技術コンサルティング。"
+  );
 
   return (
     <>
-      <header className="header">
-        <div className="header-inner">
-          <Link to="/" className="logo">
-            株式会社団野ソフトウェア
-          </Link>
-          <nav className="nav">
-            <Link to="/">トップ</Link>
-            <Link to="/services">事業</Link>
-            <Link to="/blog">ブログ</Link>
-            <Link to="/#contact">お問い合わせ</Link>
-          </nav>
-        </div>
-      </header>
-
       <section className="services-hero">
         <p className="hero-label">About</p>
         <h1>会社概要</h1>
@@ -71,13 +56,6 @@ function About() {
           </svg>
         </a>
       </section>
-
-      <footer className="footer">
-        <div className="footer-inner">
-          <span className="footer-logo">株式会社団野ソフトウェア</span>
-          <p>&copy; {new Date().getFullYear()} Danno Software</p>
-        </div>
-      </footer>
     </>
   );
 }

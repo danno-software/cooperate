@@ -7,21 +7,21 @@ user-invocable: false
 ## SEO
 
 - Google Search Console: 登録済み（2026-03-19）
+- Google Analytics: G-D3YG368KVN（index.htmlに埋め込み）
 - `public/sitemap.xml` — 送信済み
 - `public/robots.txt` — 全クローラー許可
 
-### sitemap.xml の更新タイミング
+### sitemap.xml の更新ルール
 
-- ページ追加時
-- ドメイン変更時
+ページ追加時に `<url>` エントリを追加すること。ブログ記事の個別URLは含めず、`/blog` 一覧ページのみ掲載。
+
+現在のページ: `/`、`/about`、`/services`、`/blog`
 
 ### 構造化データ（JSON-LD）
 
 `index.html` に `<script type="application/ld+json">` で Organization スキーマを埋め込み済み。
-ページ追加や事業内容の変更時は、JSON-LD の `description` フィールドも更新すること。
+事業内容の変更時は `description` フィールドも更新すること。
 
-含まれる情報:
-- 会社名・代表者名（団野 優人）
-- 設立年・所在地
-- 事業内容キーワード（AWS/GCP/Azure/Terraform/Bicep/VPC/VNet等）
-- 連絡先メールアドレス
+### OGP
+
+`index.html` の `<head>` に og:title / og:description / og:image / twitter:card を設定済み。

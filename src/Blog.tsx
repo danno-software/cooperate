@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllPosts } from "./blogLoader.ts";
-import "./App.css";
+import { usePageMeta } from "./usePageMeta.ts";
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr);
@@ -9,27 +8,12 @@ function formatDate(dateStr: string): string {
 }
 
 function Blog() {
-  const posts = getAllPosts();
+  usePageMeta("ブログ", "技術的な知見やお知らせを発信しています。株式会社団野ソフトウェア。");
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const posts = getAllPosts();
 
   return (
     <>
-      <header className="header">
-        <div className="header-inner">
-          <Link to="/" className="logo">
-            株式会社団野ソフトウェア
-          </Link>
-          <nav className="nav">
-            <Link to="/">トップ</Link>
-            <Link to="/blog">ブログ</Link>
-            <Link to="/#contact">お問い合わせ</Link>
-          </nav>
-        </div>
-      </header>
-
       <section className="blog-hero">
         <p className="hero-label">Blog</p>
         <h1>ブログ</h1>
@@ -72,13 +56,6 @@ function Blog() {
           )}
         </div>
       </section>
-
-      <footer className="footer">
-        <div className="footer-inner">
-          <span className="footer-logo">株式会社団野ソフトウェア</span>
-          <p>&copy; {new Date().getFullYear()} Danno Software</p>
-        </div>
-      </footer>
     </>
   );
 }

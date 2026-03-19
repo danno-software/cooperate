@@ -1,22 +1,29 @@
-import { StrictMode } from 'react'
+import { StrictMode, lazy } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
+import './App.css'
+import Layout from './Layout.tsx'
 import App from './App.tsx'
-import About from './About.tsx'
-import Services from './Services.tsx'
-import Blog from './Blog.tsx'
-import BlogPost from './BlogPost.tsx'
+
+const About = lazy(() => import('./About.tsx'))
+const Services = lazy(() => import('./Services.tsx'))
+const Blog = lazy(() => import('./Blog.tsx'))
+const BlogPost = lazy(() => import('./BlogPost.tsx'))
+const NotFound = lazy(() => import('./NotFound.tsx'))
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<App />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,

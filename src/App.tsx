@@ -1,6 +1,6 @@
 import { useEffect, useRef, type RefObject } from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
+import { usePageMeta } from "./usePageMeta.ts";
 
 function useReveal<T extends HTMLElement>(): RefObject<T | null> {
   const ref = useRef<T>(null);
@@ -55,26 +55,14 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
 }
 
 function App() {
+  usePageMeta("", "株式会社団野ソフトウェア - ソフトウェア開発で、ビジネスを前へ。");
+
   const aboutRef = useReveal<HTMLElement>();
   const servicesRef = useReveal<HTMLElement>();
   const contactRef = useReveal<HTMLElement>();
 
   return (
     <>
-      <header className="header">
-        <div className="header-inner">
-          <a href="#" className="logo">
-            株式会社団野ソフトウェア
-          </a>
-          <nav className="nav">
-            <Link to="/about">概要</Link>
-            <Link to="/services">事業</Link>
-            <Link to="/blog">ブログ</Link>
-            <a href="#contact">お問い合わせ</a>
-          </nav>
-        </div>
-      </header>
-
       <section className="hero">
         <div className="hero-content">
           <p className="hero-label">Danno Software</p>
@@ -178,13 +166,6 @@ function App() {
       </section>
 
       <ContactSection ref={contactRef} />
-
-      <footer className="footer">
-        <div className="footer-inner">
-          <span className="footer-logo">株式会社団野ソフトウェア</span>
-          <p>&copy; {new Date().getFullYear()} Danno Software</p>
-        </div>
-      </footer>
     </>
   );
 }
