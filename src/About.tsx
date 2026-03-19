@@ -41,7 +41,7 @@ function About() {
             </div>
             <div className="about-row">
               <dt>設立</dt>
-              <dd>2025年</dd>
+              <dd>2024年</dd>
             </div>
             <div className="about-row">
               <dt>事業内容</dt>
@@ -49,7 +49,11 @@ function About() {
             </div>
             <div className="about-row">
               <dt>所在地</dt>
-              <dd>東京都</dd>
+              <dd>大阪府大阪市北区梅田１丁目２番２号 大阪駅前第２ビル１２－１２</dd>
+            </div>
+            <div className="about-row">
+              <dt>法人番号</dt>
+              <dd>6120001264667</dd>
             </div>
           </dl>
         </div>

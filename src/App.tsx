@@ -113,7 +113,7 @@ function App() {
               </div>
               <div className="about-row">
                 <dt>設立</dt>
-                <dd>2025年</dd>
+                <dd>2024年</dd>
               </div>
               <div className="about-row">
                 <dt>事業内容</dt>
