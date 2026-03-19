@@ -27,6 +27,18 @@ function BlogPost() {
           <time className="blog-post-date">{formatDate(post.date)}</time>
           <h1>{post.title}</h1>
         </div>
+        {post.toc.length > 0 && (
+          <nav className="blog-toc">
+            <p className="blog-toc-title">目次</p>
+            <ul>
+              {post.toc.map((item) => (
+                <li key={item.id} className={item.level === 3 ? "blog-toc-sub" : ""}>
+                  <a href={`#${item.id}`}>{item.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         <div
           className="blog-post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
