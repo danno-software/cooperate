@@ -13,6 +13,8 @@ export interface BlogPost {
   description: string;
   html: string;
   toc: TocItem[];
+  searchText: string;
+  tags: string[];
 }
 
 const modules = import.meta.glob("/content/blog/*.md", {
@@ -60,6 +62,10 @@ function buildPosts(): BlogPost[] {
     .map(([path, raw]) => {
       const slug = path.split("/").pop()!.replace(/\.md$/, "");
       const { meta, body } = parseFrontmatter(raw);
+      const tags = (meta.tags ?? "")
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
       toc.length = 0;
       const html = (marked.parse(body, { renderer, async: false }) as string).replace(
         /<table\b[^>]*>[\s\S]*?<\/table>/g,
@@ -72,6 +78,8 @@ function buildPosts(): BlogPost[] {
         description: meta.description ?? "",
         html,
         toc: [...toc],
+        searchText: `${meta.title ?? slug}\n${meta.description ?? ""}\n${tags.join(" ")}\n${body}`.toLowerCase(),
+        tags,
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
