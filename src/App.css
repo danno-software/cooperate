@@ -449,6 +449,13 @@
   cursor: not-allowed;
 }
 
+.contact-email {
+  margin: 20px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
 .form-message {
   text-align: center;
   font-size: 16px;
