@@ -13,15 +13,43 @@ function BlogPost() {
 
   usePageMeta(
     post?.title ?? "記事が見つかりません",
-    post?.description ?? ""
+    post?.description ?? "",
+    post ? `/blog/${post.slug}` : undefined
   );
 
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "url": `https://danno-software.com/blog/${post.slug}`,
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社団野ソフトウェア",
+      "url": "https://danno-software.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社団野ソフトウェア",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://danno-software.com/favicon.svg"
+      }
+    },
+    ...(post.tags.length > 0 && { "keywords": post.tags.join(", ") }),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="blog-post">
         <div className="blog-post-header">
           <time className="blog-post-date">{formatDate(post.date)}</time>

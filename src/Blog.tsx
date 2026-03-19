@@ -9,7 +9,7 @@ function formatDate(dateStr: string): string {
 }
 
 function Blog() {
-  usePageMeta("ブログ", "技術的な知見やお知らせを発信しています。株式会社団野ソフトウェア。");
+  usePageMeta("ブログ", "技術的な知見やお知らせを発信しています。株式会社団野ソフトウェア。", "/blog");
 
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);

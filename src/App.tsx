@@ -60,7 +60,7 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
 }
 
 function App() {
-  usePageMeta("", "株式会社団野ソフトウェア - ソフトウェア開発で、ビジネスを前へ。");
+  usePageMeta("", "株式会社団野ソフトウェア - ソフトウェア開発で、ビジネスを前へ。", "/");
 
   const aboutRef = useReveal<HTMLElement>();
   const servicesRef = useReveal<HTMLElement>();
