@@ -1404,9 +1404,9 @@
 
 .blog-post-cta-email {
   display: block;
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   font-size: 15px;
-  color: var(--text-muted);
+  color: var(--text-heading);
   letter-spacing: 0.04em;
   transition: color 0.2s;
 }
