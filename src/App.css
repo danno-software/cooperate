@@ -451,9 +451,18 @@
 
 .contact-email {
   margin: 16px 0 0;
-  font-size: 15px;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.contact-email a {
   color: var(--text-heading);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-email a:hover {
+  color: var(--accent);
 }
 
 .form-message {
@@ -1403,15 +1412,19 @@
 }
 
 .blog-post-cta-email {
-  display: block;
-  margin: 12px 0 0;
-  font-size: 15px;
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.blog-post-cta-email a {
   color: var(--text-heading);
-  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition: color 0.2s;
 }
 
-.blog-post-cta-email:hover {
+.blog-post-cta-email a:hover {
   color: var(--accent);
 }
 

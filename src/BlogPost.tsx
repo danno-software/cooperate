@@ -47,14 +47,16 @@ function BlogPost() {
 
       <section className="blog-post-cta">
         <p className="blog-post-cta-text">
-          この記事について質問やご相談がありましたら、お気軽にお問い合わせください。
+          お仕事のご依頼・ご相談はお気軽にどうぞ。
         </p>
         <a href="/#contact" className="blog-post-cta-button">
           お問い合わせページへ
         </a>
-        <a href="mailto:yuto7924@gmail.com" className="blog-post-cta-email">
-          yuto7924@gmail.com
-        </a>
+        <p className="blog-post-cta-email">
+          フォームから送信できない場合は{" "}
+          <a href="mailto:yuto7924@gmail.com">yuto7924@gmail.com</a>{" "}
+          までご連絡ください。
+        </p>
       </section>
 
       <div className="blog-post-back">
