@@ -49,7 +49,7 @@ function ContactSection({ ref }: { ref: RefObject<HTMLElement | null> }) {
 }
 
 function App() {
-  usePageMeta("", "株式会社団野ソフトウェア - AWS / GCP / Azure のクラウドインフラ設計・構築から運用最適化、アプリケーション開発まで。", "/");
+  usePageMeta("", "株式会社団野ソフトウェア - AWS / GCP / Azure のクラウドインフラ設計・構築から運用最適化、技術コンサルティングまで。", "/");
 
   const aboutRef = useReveal<HTMLElement>();
   const credentialsRef = useReveal<HTMLElement>();
@@ -67,9 +67,9 @@ function App() {
           </h1>
           <div className="hero-rule" />
           <p className="hero-sub">
-            AWS / GCP / Azure の設計・構築から運用最適化、
+            AWS / GCP / Azure の設計・構築から運用最適化まで、
             <br />
-            アプリケーション開発まで一貫して支援します。
+            一貫して支援します。
           </p>
           <a href={BOOKING_URL} className="hero-cta">
             お問い合わせ
@@ -103,7 +103,7 @@ function App() {
               </div>
               <div className="about-row">
                 <dt>事業内容</dt>
-                <dd>クラウドインフラ設計・構築 / クラウド運用・最適化 / アプリケーション開発 / 技術コンサルティング</dd>
+                <dd>クラウドインフラ設計・構築 / クラウド運用・最適化 / 技術コンサルティング</dd>
               </div>
             </dl>
             <Link to="/about" className="services-more" style={{ marginTop: 32 }}>
@@ -208,13 +208,6 @@ function App() {
               </article>
               <article className="service-card">
                 <span className="service-index">03</span>
-                <h3>アプリケーション開発</h3>
-                <p>
-                  Webアプリケーションの設計・開発から、AIツールを活用したプロトタイプの素早い構築まで対応します。
-                </p>
-              </article>
-              <article className="service-card">
-                <span className="service-index">04</span>
                 <h3>技術コンサルティング</h3>
                 <p>
                   アーキテクチャレビュー、技術選定、チームへのナレッジ共有など、技術的な意思決定を支援します。
