@@ -82,10 +82,6 @@ function App() {
             お客様の課題解決をサポートします。
           </p>
         </div>
-        <div className="hero-scroll">
-          <span>Scroll</span>
-          <div className="hero-scroll-line" />
-        </div>
       </section>
 
       <section id="about" className="section" ref={aboutRef}>
