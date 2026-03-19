@@ -574,6 +574,82 @@
   margin: 0;
 }
 
+/* ─── Target / Strength ─── */
+.services-target,
+.services-strength {
+  padding: 80px 40px;
+}
+
+.services-target {
+  background: var(--bg-alt);
+}
+
+.services-target-inner,
+.services-strength-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.services-target h2,
+.services-strength h2 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin: 0 0 32px;
+}
+
+.target-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.target-list li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.strength-item {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.strength-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text-heading);
+}
+
+.strength-item p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .services-target,
+  .services-strength {
+    padding: 60px 24px;
+  }
+
+  .strength-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .services-detail {
   padding: 0 40px 80px;
 }

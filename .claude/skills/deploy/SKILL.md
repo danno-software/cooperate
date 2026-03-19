@@ -21,3 +21,11 @@ user-invocable: false
 - Framework Preset: Vite
 - Build Command: `npm run build`
 - Output Directory: `dist`
+
+### デプロイ失敗時のログ確認
+
+```
+npx vercel inspect <deployment-id> --logs
+```
+
+デプロイIDはVercelの通知やダッシュボードから取得可能。

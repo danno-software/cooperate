@@ -14,6 +14,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` — プロダクションビルド
 - `npm run lint` — ESLint
 
+## スキル
+
+詳細は `.claude/skills/` を参照。architecture（ファイル構成・デザイン）、deploy（Vercel・環境変数）、seo（sitemap更新ルール）。
+
 ## 返信言語
 
 ユーザーへの返信は日本語で行うこと。

@@ -30,6 +30,37 @@ function Services() {
         </p>
       </section>
 
+      <section className="services-target">
+        <div className="services-target-inner">
+          <h2>こんな課題はありませんか？</h2>
+          <ul className="target-list">
+            <li>クラウド環境を手動で管理していて、属人化やミスが不安</li>
+            <li>インフラ専任のエンジニアがおらず、設計・構築を任せたい</li>
+            <li>採用が決まるまでの間、インフラまわりを外部に頼りたい</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="services-strength">
+        <div className="services-strength-inner">
+          <h2>1人法人だからできること</h2>
+          <div className="strength-grid">
+            <div className="strength-item">
+              <h3>伝言ゲームなし</h3>
+              <p>窓口と作業者が同一人物。要件の認識ずれが起きません。</p>
+            </div>
+            <div className="strength-item">
+              <h3>意思決定が速い</h3>
+              <p>社内承認不要。相談から見積もり・着手まで最短で対応します。</p>
+            </div>
+            <div className="strength-item">
+              <h3>柔軟な関わり方</h3>
+              <p>スポットの技術相談から継続的な開発支援まで、規模を問わず対応できます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="services-detail">
         <div className="services-detail-inner">
 
