@@ -228,7 +228,7 @@ function Services() {
                 <span className="srv-pricing-amount">20</span>
                 <span className="srv-pricing-unit">万円〜 / 月</span>
               </div>
-              <p>月20時間を目安に、インフラ運用・開発支援を継続的に提供します。稼働時間は柔軟に調整可能です。</p>
+              <p>月20〜80時間の範囲で、インフラ運用・開発支援を継続的に提供します。稼働時間はプロジェクトに応じて柔軟に調整可能です。</p>
             </div>
             <div className="srv-pricing-card page-reveal">
               <h3>短期プロジェクト</h3>
