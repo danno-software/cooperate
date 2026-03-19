@@ -52,11 +52,9 @@ function BlogPost() {
         <a href="/#contact" className="blog-post-cta-button">
           お問い合わせページへ
         </a>
-        <p className="blog-post-cta-fallback">
-          フォームが利用できない場合は{" "}
-          <a href="mailto:yuto7924@gmail.com">yuto7924@gmail.com</a>{" "}
-          までご連絡ください。
-        </p>
+        <a href="mailto:yuto7924@gmail.com" className="blog-post-cta-email">
+          yuto7924@gmail.com
+        </a>
       </section>
 
       <div className="blog-post-back">

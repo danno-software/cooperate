@@ -1395,21 +1395,17 @@
   transform: translateY(-2px);
 }
 
-.blog-post-cta-fallback {
-  margin: 20px 0 0;
-  font-size: 14px;
-  line-height: 1.7;
+.blog-post-cta-email {
+  display: block;
+  margin: 16px 0 0;
+  font-size: 15px;
   color: var(--text-muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
 }
 
-.blog-post-cta-fallback a {
+.blog-post-cta-email:hover {
   color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.blog-post-cta-fallback a:hover {
-  opacity: 0.7;
 }
 
 .blog-post-back {
