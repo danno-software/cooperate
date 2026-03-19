@@ -3,27 +3,39 @@ import { Link } from "react-router-dom";
 import { getAllPosts } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
 
-function useRevealAll(deps: unknown[] = []) {
+function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const targets = el.querySelectorAll(".page-reveal:not(.page-visible)");
-    const observer = new IntersectionObserver(
+
+    const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             (entry.target as HTMLElement).classList.add("page-visible");
-            observer.unobserve(entry.target);
+            io.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
+
+    function observeNew() {
+      el!.querySelectorAll(".page-reveal:not(.page-visible)").forEach((t) =>
+        io.observe(t)
+      );
+    }
+    observeNew();
+
+    const mo = new MutationObserver(observeNew);
+    mo.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
+  }, []);
   return ref;
 }
 
@@ -55,7 +67,7 @@ function Blog() {
     return matchesSearch && matchesTag;
   });
 
-  const wrapperRef = useRevealAll([filteredPosts]);
+  const wrapperRef = useRevealAll();
 
   return (
     <div ref={wrapperRef}>
