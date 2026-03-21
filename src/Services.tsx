@@ -185,6 +185,94 @@ function Services() {
         </div>
       </section>
 
+      <section className="srv-cases">
+        <div className="srv-cases-inner">
+          <h2 className="page-reveal">対応事例</h2>
+          <p className="srv-cases-note page-reveal">
+            以下は対応事例の一部です。記載以外の領域もお気軽にご相談ください。
+          </p>
+          <div className="srv-cases-grid">
+            {[
+              {
+                tag: "IaC",
+                title: "クラウド環境の IaC 化",
+                challenge: "クラウドリソースがすべて手動構築で、環境差異や属人化が発生していた。",
+                approach: "Terraform / Bicep によるコード管理を導入し、CI/CD パイプラインと連携。環境ごとにパラメータを切り替える構成に整備。",
+                result: "環境構築の再現性を確保し、変更がコードレビュー可能な運用に移行。",
+              },
+              {
+                tag: "デプロイ",
+                title: "ゼロダウンタイムデプロイの実現",
+                challenge: "アプリケーション更新のたびにサービス停止が発生し、営業時間中のリリースが困難だった。",
+                approach: "ステージングスロットを活用したスワップ方式を導入し、デプロイパイプラインを自動化。",
+                result: "営業時間中でもリリース可能になり、リリース頻度が向上。問題時は即座に切り戻し可能に。",
+              },
+              {
+                tag: "ネットワーク",
+                title: "VPC / VNet のサブネット分離設計",
+                challenge: "ネットワークがフラットな構成で、リソース間のアクセス制御が不十分だった。",
+                approach: "用途別の多層サブネット設計、セキュリティグループ / NSG の整備、PaaS 接続のプライベート化を実施。",
+                result: "セキュリティ基準を満たすネットワーク構成を実現。",
+              },
+              {
+                tag: "コスト最適化",
+                title: "クラウド利用料の分析と削減",
+                challenge: "クラウドの月額費用が増加傾向にあり、最適化の余地が見えていなかった。",
+                approach: "利用状況の分析、未使用リソースの整理、ストレージタイプの見直し、検証環境の自動停止/起動を導入。",
+                result: "月額コストを大幅に削減。",
+              },
+              {
+                tag: "DNS",
+                title: "DNS ゾーンの分離と移行",
+                challenge: "DNS レコードが一箇所に集中し、誤変更のリスクが高い状態だった。",
+                approach: "環境ごとのゾーン分離設計を行い、IaC によるレコード管理に移行。",
+                result: "変更影響の局所化と、レコード変更の監査証跡を確保。",
+              },
+              {
+                tag: "CI/CD",
+                title: "CI/CD パイプラインの刷新",
+                challenge: "既存の CI/CD が複数リポジトリに分散し、管理コストが増大していた。",
+                approach: "GitHub Actions への統合移行を実施し、OIDC 認証によるセキュアなデプロイを設計。",
+                result: "シークレット管理の簡素化とデプロイの統一管理を実現。",
+              },
+              {
+                tag: "認証基盤",
+                title: "BaaS 環境のセキュリティ改善と運用整備",
+                challenge: "複数アプリケーションが同一 BaaS 基盤を共有しており、アプリ間の認可制御が不十分だった。",
+                approach: "アクセス制御ロジックの設計・実装、DB マイグレーションの GitHub Actions による自動化、運用フローの整備。",
+                result: "認可の脆弱性を解消し、DB 変更を安全にデプロイできる体制を確立。",
+              },
+              {
+                tag: "DB移行",
+                title: "データベースのバージョンアップグレード",
+                challenge: "DB エンジンのサポート終了に伴い、安全にアップグレードする必要があった。",
+                approach: "互換性チェックスクリプトによる自動検証、スナップショット比較による差分確認、段階的な移行プロセスを設計。",
+                result: "既存アプリケーションへの影響なくアップグレードを完了。",
+              },
+            ].map((c, i) => (
+              <article className="srv-case-card page-reveal" key={i} style={{ animationDelay: `${i * 0.06}s` }}>
+                <span className="srv-case-tag">{c.tag}</span>
+                <h3>{c.title}</h3>
+                <dl className="srv-case-dl">
+                  <div className="srv-case-row">
+                    <dt>課題</dt>
+                    <dd>{c.challenge}</dd>
+                  </div>
+                  <div className="srv-case-row">
+                    <dt>対応</dt>
+                    <dd>{c.approach}</dd>
+                  </div>
+                  <div className="srv-case-row">
+                    <dt>成果</dt>
+                    <dd>{c.result}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="srv-pricing">
         <div className="srv-pricing-inner">
           <h2 className="page-reveal">料金・契約形態</h2>
