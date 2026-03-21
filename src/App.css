@@ -352,6 +352,95 @@
   }
 }
 
+/* ─── Career ─── */
+.abt-career {
+  padding: 0 40px 80px;
+}
+
+.abt-career-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.abt-career h2 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin: 0 0 36px;
+}
+
+.abt-career-timeline {
+  position: relative;
+  padding-left: 32px;
+  border-left: 2px solid var(--border);
+}
+
+.abt-career-item {
+  position: relative;
+  padding: 0 0 40px 24px;
+}
+
+.abt-career-item:last-child {
+  padding-bottom: 0;
+}
+
+.abt-career-item::before {
+  content: "";
+  position: absolute;
+  left: -39px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}
+
+.abt-career-item:last-child::before {
+  background: var(--accent);
+}
+
+.abt-career-period {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.abt-career-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text-heading);
+}
+
+.abt-career-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .abt-career {
+    padding: 0 24px 60px;
+  }
+
+  .abt-career-timeline {
+    padding-left: 20px;
+  }
+
+  .abt-career-item {
+    padding-left: 16px;
+  }
+
+  .abt-career-item::before {
+    left: -27px;
+  }
+}
+
 /* ─── Credentials ─── */
 .cred-numbers {
   display: grid;

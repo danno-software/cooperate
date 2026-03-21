@@ -58,17 +58,55 @@ function About() {
           <h2>代表メッセージ</h2>
           <div className="abt-message-body">
             <p>
-              SIerでのインフラエンジニアを経て、2024年に株式会社団野ソフトウェアを設立しました。
+              SIerでオンプレミス環境の設計・構築からキャリアをスタートし、その後クラウドインフラの領域に軸足を移しました。
+              AWS・GCP・Azureを横断しながら、分析基盤やECプラットフォーム、業務システムなど、さまざまな現場でインフラの設計・構築・運用に携わってきました。
             </p>
             <p>
-              8年間、AWS・GCP・Azureを中心としたクラウドインフラの設計・構築・運用に携わるなかで、
-              「もっと早く相談できる相手がいれば」という声を何度も聞いてきました。
+              8年間の実務を通じて、「もっと早く相談できる相手がいれば」という声を何度も聞いてきました。
+              2024年に株式会社団野ソフトウェアを設立したのは、その課題に応えるためです。
             </p>
             <p>
-              少数精鋭だからこそ、伝言ゲームなしのスピード感と、
-              技術に対する責任を持った支援が可能です。
+              少数精鋭だからこそ、伝言ゲームなしのスピード感と、技術に対する責任を持った支援が可能です。
               お客様のチームの一員のような距離感で、技術課題の解決をお手伝いします。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="abt-career">
+        <div className="abt-career-inner">
+          <h2 className="page-reveal">経歴</h2>
+          <div className="abt-career-timeline">
+            {[
+              {
+                period: "2018 — 2020",
+                title: "オンプレミス基盤の設計・構築",
+                desc: "VMware vSphere / NetBackup / ストレージ更改など、物理インフラの提案から設計・構築・移行までを担当。",
+              },
+              {
+                period: "2020 — 2022",
+                title: "クラウド移行・分析基盤構築",
+                desc: "AWS・GCPを中心に、IoT / データ分析基盤の設計・構築に従事。Terraform による IaC 管理、Cloud Build での CI/CD 構築を推進。",
+              },
+              {
+                period: "2022 — 2024",
+                title: "マルチクラウド環境の設計・運用",
+                desc: "AWS・Azure・GCPの3クラウドにまたがるプロジェクトを複数並行で担当。Terraform / Bicep でのIaC化、CI/CD改善、ネットワーク設計など幅広く対応。",
+              },
+              {
+                period: "2024 —",
+                title: "株式会社団野ソフトウェア設立",
+                desc: "これまでの経験をもとに、クラウドインフラの技術支援を専門とする会社を設立。設計・構築から運用最適化、技術コンサルティングまで一貫して提供。",
+              },
+            ].map((item, i) => (
+              <div className="abt-career-item page-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                <span className="abt-career-period">{item.period}</span>
+                <div className="abt-career-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
