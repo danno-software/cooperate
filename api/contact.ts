@@ -13,9 +13,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const RESEND_APIKEY = process.env.RESEND_APIKEY;
-  const CONTACT_TO = process.env.CONTACT_TO;
 
-  if (!RESEND_APIKEY || !CONTACT_TO) {
+  if (!RESEND_APIKEY) {
     return res.status(500).json({ error: "Server configuration error" });
   }
 
@@ -27,7 +26,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 管理者への通知メール
     await resend.emails.send({
       from: "株式会社団野ソフトウェア <noreply@danno-software.com>",
-      to: [CONTACT_TO],
+      to: ["yuto7924@gmail.com"],
       replyTo: email,
       subject: `【お問い合わせ】${name}様より`,
       text: `お名前: ${name}\n${companyLine}メールアドレス: ${email}\n\nお問い合わせ内容:\n${message}`,
