@@ -10,6 +10,7 @@ const About = lazy(() => import('./About.tsx'))
 const Services = lazy(() => import('./Services.tsx'))
 const Blog = lazy(() => import('./Blog.tsx'))
 const BlogPost = lazy(() => import('./BlogPost.tsx'))
+const Contact = lazy(() => import('./Contact.tsx'))
 const NotFound = lazy(() => import('./NotFound.tsx'))
 
 export function RootApp() {
@@ -22,6 +23,7 @@ export function RootApp() {
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { usePageMeta } from "./usePageMeta.ts";
-import { BOOKING_URL, bookingUrl } from "./booking.ts";
 
 function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -173,12 +173,12 @@ function Services() {
                   <h3>支援内容</h3>
                   <ul>{svc.scope.map((s) => (<li key={s}>{s}</li>))}</ul>
                 </div>
-                <a href={bookingUrl(svc.title + "について相談")} className="srv-card-cta">
+                <Link to="/contact" className="srv-card-cta">
                   このサービスについて相談する
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </article>
           ))}
@@ -321,12 +321,12 @@ function Services() {
       <section className="page-cta">
         <div className="page-cta-inner page-reveal">
           <p className="page-cta-lead">まずはお気軽にご相談ください。</p>
-          <a href={BOOKING_URL} className="contact-button">
+          <Link to="/contact" className="contact-button">
             <span>お問い合わせ</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
           <div className="trust-badges">
             <span className="trust-badge">初回相談無料</span>
             <span className="trust-badge">NDA対応可</span>

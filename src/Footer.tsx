@@ -22,6 +22,7 @@ function Footer() {
           <div className="footer-col">
             <p className="footer-col-title">お問い合わせ</p>
             <div className="footer-nav">
+              <Link to="/contact">お問い合わせフォーム</Link>
               <a href="mailto:yuto7924@gmail.com">
                 yuto7924@gmail.com
               </a>

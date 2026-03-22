@@ -735,6 +735,43 @@
   }
 }
 
+.contact-page {
+  padding-top: 120px;
+}
+
+.contact-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 0;
+}
+
+.contact-done h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.contact-done p {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.form-required {
+  color: #c62828;
+  font-size: 13px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form-required {
+    color: #ef5350;
+  }
+}
+
 /* ─── Footer ─── */
 .footer {
   margin-top: auto;

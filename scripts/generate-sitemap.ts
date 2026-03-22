@@ -22,6 +22,7 @@ const staticPages: PageEntry[] = [
   { loc: "/about", changefreq: "monthly", priority: "0.8" },
   { loc: "/services", changefreq: "monthly", priority: "0.8" },
   { loc: "/blog", changefreq: "weekly", priority: "0.8" },
+  { loc: "/contact", changefreq: "monthly", priority: "0.7" },
 ];
 
 // ブログ記事から slug と date を取得

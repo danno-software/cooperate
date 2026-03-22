@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getPostBySlug } from "./blogLoader.ts";
 import { usePageMeta } from "./usePageMeta.ts";
-import { BOOKING_URL } from "./booking.ts";
 
 function useRevealAll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -104,9 +103,9 @@ function BlogPost() {
         <p className="blog-post-cta-text">
           技術的な課題、お気軽にご相談ください。初回無料。
         </p>
-        <a href={BOOKING_URL} className="blog-post-cta-button">
+        <Link to="/contact" className="blog-post-cta-button">
           お問い合わせ
-        </a>
+        </Link>
       </section>
 
       <div className="blog-post-back page-reveal">

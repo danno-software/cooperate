@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BOOKING_URL } from "./booking.ts";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,13 +24,13 @@ function Header() {
           <Link to="/about" onClick={() => setMenuOpen(false)}>概要</Link>
           <Link to="/services" onClick={() => setMenuOpen(false)}>事業</Link>
           <Link to="/blog" onClick={() => setMenuOpen(false)}>ブログ</Link>
-          <a
-            href={BOOKING_URL}
+          <Link
+            to="/contact"
             className="nav-cta"
             onClick={() => setMenuOpen(false)}
           >
             お問い合わせ
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

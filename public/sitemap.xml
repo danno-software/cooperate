@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://danno-software.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://danno-software.com/blog/aws-multi-account-dns-zone-design</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
