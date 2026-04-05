@@ -1,6 +1,6 @@
 import type { Plugin, ViteDevServer } from "vite";
 import { marked } from "marked";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, watch } from "node:fs";
 import { join, basename } from "node:path";
 
 function toId(text: string): string {
@@ -89,6 +89,18 @@ export default function blogPlugin(): Plugin {
     load(id) {
       if (id !== resolvedId) return;
       return `export const posts = ${JSON.stringify(buildPosts())};`;
+    },
+    configureServer(server: ViteDevServer) {
+      const blogDir = join(root, "content/blog");
+      watch(blogDir, (_event, filename) => {
+        if (filename?.endsWith(".md")) {
+          const mod = server.moduleGraph.getModuleById(resolvedId);
+          if (mod) {
+            server.moduleGraph.invalidateModule(mod);
+            server.ws.send({ type: "full-reload" });
+          }
+        }
+      });
     },
     handleHotUpdate({
       file,
